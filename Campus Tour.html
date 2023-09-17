@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT university</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Work+Sans:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Exo+2:wght@300&family=Work+Sans:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&family=Sen&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+    </style>
+</head>
+
+<body>
+    <div class="joint">
+        <div class="first-row">
+            <div class="box-4">
+                <div class="logo">
+                    <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+                </div>
+
+                <div class="name">
+                    <span>ICT</span> university
+                </div>
+            </div>
+
+            <!-- navbar -->
+
+            <nav class="navbar ">
+
+                <ul class="nav-left ">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Admissions.html">Admissions</a></li>
+                    <li><a href="Campus Tour.html">Campus Tour</a></li>
+                    <li><a href="Activities.html">Activities <i class="fas fa-caret-down"></i></a>
+                        <div class="drop_down">
+                            <ul>
+                                <li><a href="#">Engineering</a></li>
+                                <li><a href="#">Medical</a></li>
+                                <li><a href="#">BSC</a></li>
+                                <li><a href="#">Pharmacy</a></li>
+                                <li><a href="#">Journalism</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="fee_payment.html">Fee payment</a></li>
+                </ul>
+        </div>
+        </nav>
+
+        <!-- new -->
+
+        <link rel="stylesheet" href="./css/Campus_css.css">
+
+        <div class="line">
+            <h1>Campus Visit !</h1>
+
+            <p> In many ways, the campus can define the college experience. From quaint college towns to sprawling
+                cities,
+                each type of campus has unique benefits to offer students. And once you’re there, it’s important to take
+                full advantage of your opportunity to experience the university in-person.</p>
+        </div>
+
+
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 5</div>
+                <img src="img/campus_tour/photo1.webp" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 5</div>
+                <img src="img/campus_tour/photo2.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 5</div>
+                <img src="img/campus_tour/AUDITORIUM.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 5</div>
+                <img src="img/campus_tour/CLASS.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">5 / 5</div>
+                <img src="img/campus_tour/GROUND.jpg" style="width:100%">
+            </div>
+            <!-- <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="img/campus_tour/photo2.jpg"
+                    style="width:100%"> -->
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        let timeoutId = null;
+        const slides = document.getElementsByClassName("mySlides");
+        const dots = document.getElementsByClassName("dot");
+
+        showSlides();
+        function currentSlide(index) {
+            slideIndex = index;
+            showSlides();
+        }
+        function plusSlides(step) {
+
+            if (step < 0) {
+                slideIndex -= 2;
+
+                if (slideIndex < 0) {
+                    slideIndex = slides.length - 1;
+                }
+            }
+
+            showSlides();
+        }
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                dots[i].classList.remove('active');
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].classList.add('active');
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+            timeoutId = setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+    </script>
+
+</body>
+
+</html>
+</body>
+
+</html>
